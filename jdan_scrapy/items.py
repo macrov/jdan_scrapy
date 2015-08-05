@@ -15,4 +15,5 @@ class JdanScrapyItem(scrapy.Item):
     support_votes = scrapy.Field()
     unsupport_votes = scrapy.Field()
     comments_count = scrapy.Field()
-    pics = scrapy.Field()
+    #pics = scrapy.Field()
+    image_urls = scrapy.Field()

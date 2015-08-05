@@ -49,10 +49,10 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, lik
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
-    'jdan_scrapy.middlewares.ProxyMiddleware': 100,
-}
+#DOWNLOADER_MIDDLEWARES = {
+#    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
+#    'jdan_scrapy.middlewares.ProxyMiddleware': 100,
+#}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -65,6 +65,12 @@ DOWNLOADER_MIDDLEWARES = {
 #ITEM_PIPELINES = {
 #    'jdan_scrapy.pipelines.SomePipeline': 300,
 #}
+ITEM_PIPELINES = {
+        'scrapy.pipelines.images.ImagesPipeline':1
+}
+
+IMAGES_STORE = '/tmp/pics/'
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
